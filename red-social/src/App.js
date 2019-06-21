@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import Zoom from 'react-reveal/Zoom'; // Importing Zoom effect
 import './App.css';
+import LogInGoogle from './components/LogInGoogle';
+import Veggie from './veggie.jpg';
+
 
 class App extends Component {
   render() {
@@ -9,13 +11,11 @@ class App extends Component {
       <div className="App">
         <Zoom>{/*Using Zoom Effect*/}
           <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Welcome to React</h1>
+            <h1 className="App-title">Veggie Community</h1>
+            <img src={Veggie}/>
           </header>
         </Zoom>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <LogInGoogle/>
       </div>
     );
   }
