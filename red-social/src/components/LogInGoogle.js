@@ -23,7 +23,7 @@ class LogInGoogle extends Component{
         firebase.auth().onAuthStateChanged(user => {
             this.setState({ user });
         });
-        firebase.database().ref('/pictures').on("child_added", snapshot => {
+        firebase.database().ref('pictures').on("child_added", snapshot => {
             this.setState({
                 pictures: this.state.pictures.concat(snapshot.val())
             })
@@ -91,7 +91,7 @@ class LogInGoogle extends Component{
                 displayName: this.state.user.displayName,
                 image: task.snapshot.downloadURL
             };
-            const dbRef= firebase.database().ref('/pictures');
+            const dbRef= firebase.database().ref('pictures');
             const newPicture= dbRef.push();
             newPicture.set(record);
     });
@@ -101,8 +101,17 @@ class LogInGoogle extends Component{
         return(
             <div className="btnRegister">
                 <p>{this.renderLoginButton()}</p>
+            
 
+            <div class="ui labeled button" tabindex="0">
+            <div class="ui button">
+              <i class="heart icon"></i> Like
             </div>
+            <a class="ui basic label">
+              2,048
+            </a>
+          </div>
+          </div>
         )
     }
 }
