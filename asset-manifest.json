@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/framework-social-network/static/css/main.1105034f.chunk.css",
-    "main.js": "/framework-social-network/static/js/main.75b779bd.chunk.js",
-    "main.js.map": "/framework-social-network/static/js/main.75b779bd.chunk.js.map",
-    "runtime~main.js": "/framework-social-network/static/js/runtime~main.2834e1ba.js",
-    "runtime~main.js.map": "/framework-social-network/static/js/runtime~main.2834e1ba.js.map",
-    "static/js/2.5dc69ea7.chunk.js": "/framework-social-network/static/js/2.5dc69ea7.chunk.js",
-    "static/js/2.5dc69ea7.chunk.js.map": "/framework-social-network/static/js/2.5dc69ea7.chunk.js.map",
-    "index.html": "/framework-social-network/index.html",
-    "precache-manifest.444958d3f8bd2bc3d5503aa13e9cbe13.js": "/framework-social-network/precache-manifest.444958d3f8bd2bc3d5503aa13e9cbe13.js",
-    "service-worker.js": "/framework-social-network/service-worker.js",
-    "static/css/main.1105034f.chunk.css.map": "/framework-social-network/static/css/main.1105034f.chunk.css.map",
-    "static/media/veggie.jpg": "/framework-social-network/static/media/veggie.8de83701.jpg"
+    "main.css": "/veggieCommunity/static/css/main.1105034f.chunk.css",
+    "main.js": "/veggieCommunity/static/js/main.e47cc404.chunk.js",
+    "main.js.map": "/veggieCommunity/static/js/main.e47cc404.chunk.js.map",
+    "runtime~main.js": "/veggieCommunity/static/js/runtime~main.5f9e3164.js",
+    "runtime~main.js.map": "/veggieCommunity/static/js/runtime~main.5f9e3164.js.map",
+    "static/js/2.636b2091.chunk.js": "/veggieCommunity/static/js/2.636b2091.chunk.js",
+    "static/js/2.636b2091.chunk.js.map": "/veggieCommunity/static/js/2.636b2091.chunk.js.map",
+    "index.html": "/veggieCommunity/index.html",
+    "precache-manifest.873c351e7f61d7d9321fe993087fd742.js": "/veggieCommunity/precache-manifest.873c351e7f61d7d9321fe993087fd742.js",
+    "service-worker.js": "/veggieCommunity/service-worker.js",
+    "static/css/main.1105034f.chunk.css.map": "/veggieCommunity/static/css/main.1105034f.chunk.css.map",
+    "static/media/veggie.jpg": "/veggieCommunity/static/media/veggie.8de83701.jpg"
   }
 }
