@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0e663f60a54ca90c129161604d70a6cb",
+    "revision": "bf81748ff6e927c4ad098a489769199f",
     "url": "/veggieCommunity/./index.html"
   },
   {
-    "revision": "b6810b99c9d972301f70",
+    "revision": "571dba29002a46895524",
     "url": "/veggieCommunity/./static/css/main.1105034f.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/veggieCommunity/./static/js/2.73876484.chunk.js"
   },
   {
-    "revision": "b6810b99c9d972301f70",
-    "url": "/veggieCommunity/./static/js/main.cac0b393.chunk.js"
+    "revision": "571dba29002a46895524",
+    "url": "/veggieCommunity/./static/js/main.a76e19fd.chunk.js"
   },
   {
     "revision": "08eb6e8383f463094a00",
