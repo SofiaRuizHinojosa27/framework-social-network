@@ -1,3 +1,6 @@
+body{
+  background-color: #98FB98;
+}
 .App {
   text-align: center;
 }
@@ -19,13 +22,28 @@
 
 .btn{
   color: whitesmoke;
-  padding: 2rem;
+  padding: 1rem;
   align-items: center;
   background-color:#FF8000;
-  margin-top: 2rem;
-  font-size: 1.3rem;
+  margin-top: 1rem;
+  font-size: 1rem;
   height: inherit;
   width: auto;
 }
 
+.ui.menu{
+  background-color: #F4A460;
+  height: auto;
+  width: 100%;
+  font-size: 2rem;
+  align-items: center;
+}
+
+.a.item{
+background-color: #6fa84b;
+}
+
+.SignIn{
+  margin: 1rem 1rem 1rem 1rem;
+}
 

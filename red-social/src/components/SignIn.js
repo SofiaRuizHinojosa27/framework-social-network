@@ -4,6 +4,7 @@ import Zoom from 'react-reveal/Zoom'; // Importing Zoom effect
 import VeggieNav from '../veggieNav.jpg';
 import firebase from "../config/config";
 import LogInGoogle from "./LogInGoogle";
+import {Link} from "react-router-dom";
 
 	
 
@@ -57,15 +58,15 @@ render() {
   				<div class="two fields">
     			<div class="field">
       				<label>Email</label>
-      				<input placeholder="Email" type="text" onChange={this.handleChange}/>
+      				<input placeholder="Email" type="text" onChange={this.handleChange} id="email"/>
     			</div>
     			<div class="field">
       				<label>Contraseña</label>
-      				<input placeholder="Contraseña" type="password" onChange={this.handleChange}/>
+      				<input placeholder="Contraseña" type="password" onChange={this.handleChange} id="password"/>
     			</div>
   			</div>
-			    <a className="form-check-label" href="/#/SignIn">
-	            	No tienes una cuenta ¡Unete!
+			    <a className="form-check-label">
+				<Link to="/Register">¿Aun no tienes cuenta? Registrate</Link>
 	            </a>
 		</div>
 		<br/>

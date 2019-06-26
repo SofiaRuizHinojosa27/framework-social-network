@@ -1,101 +1,97 @@
 import React, {Component} from 'react';
 import '../App.css';
 import firebase from "../config/config";
-import Feed from './Feed';
+import Veggie from '../veggie.jpg';
+import {Link} from "react-router-dom";
 
-class RegisterWithEmail extends Component{
+export class Register extends Component{
     constructor(){
-        super();
-        this.state= {
-            user:null
-        }; 
+	    super();
+	    this.state = {
+            displayName: '',
+	        email: '',
+            password: '',
+            ciudad:''
+	        }
+	this.handleChange = this.handleChange.bind(this);
+    this.loginWithEmail = this.loginWithEmail.bind(this);
+	}
+	
 
-    }
-    componentWillMount(){
-        firebase.auth().onAuthStateChanged(user => {
-            this.setState({ user });
-        });
-    }    
+handleChange = (e) => {
+	this.setState({
+	    [e.target.id]: e.target.value,
+	    });
+}
+	
 
-    LoginWithEmail(email, password) {
-        //I sign in to an existing account with email and password
-        firebase.auth().signInWithEmailAndPassword(email, password)
-        .then(() =>
-          <Feed/>
-        )
-        .catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        alert("Something went wrong :( " + errorMessage);
-        // ...
-        });
-      }
-
-    RegisterWithEmail(email, password){
+loginWithEmail(e){
+	e.preventDefault();
+	    const displayName = this.state.displayName;
+	    const email = this.state.email;
+        const password = this.state.password;
+        const ciudad =this.state.ciudad;
         firebase.auth().createUserWithEmailAndPassword(email, password)
-        .catch(function(error) {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            alert("Something went wrong :( " + errorMessage);
-          });
-    }  
-
-    saveData(uid, email, password){
-        let user = {
-            nombre: document.getElementById('name').value,
-            apellido: document.getElementById('lastName').value,
-            ciudad: document.getElementById('city').value,
-            email: email,
-            password: password,
-            }
-    //Dentro de mi rama de usuarios, guardo el usuario con su uid
-    firebase.database().ref("users/" + uid).set(user);
-        }
-
-    handleLogout(){
-        firebase.auth().signOut()
-        .then(result => console.log(`${result.user.email} ha cerrado sesión`))
-        .catch(error => console.log(`Error ${error.code}: ${error.message}`));
-    }
+	    .then(function(){
+	        const user = firebase.auth().currentUser;
+	        user.updateProfile({
+            displayName: displayName,
+            ciudad: ciudad
+	        })
+        })
+	    .catch(function(error) {
+	         console.log(error);
+	    });
+}
     render(){
         return(
+            
             <div class="ui placeholder segment">
+                <h1>Ingresa tus datos de registro</h1>
+                <br/>
                 <div class="ui two column very relaxed stackable grid">
                     <div class="column">
-                    <div class="ui form">
-                        <div class="field">
-                        <label>Username</label>
+                    <div class="ui center aligned form">
+                    <div class="field">
+                        <label>Nombre</label>
                         <div class="ui left icon input">
-                            <input type="text" placeholder="Username" email={this.props.mail}/>
+                            <input type="text" placeholder="Usuario" onChange={this.handleChange} id="displayName"/>
                             <i class="user icon"></i>
                         </div>
                         <div class="field">
-                        <label>Password</label>
+                        <label>Email</label>
                         <div class="ui left icon input">
-                            <input type="password" password={this.props.password}/>
+                            <input type="text" placeholder="Email" onChange={this.handleChange} id="email"/>
+                            <i class="mail icon"></i>
+                        </div>
+                        <div class="field">
+                        <label>Contraseña</label>
+                        <div class="ui left icon input">
+                            <input type="password" onChange={this.handleChange} id="password"/>
                             <i class="lock icon"></i>
                         </div>
                         </div>
-                        <div class="ui blue submit button">Login</div>
-                    </div>
-                    </div>
-                    <div class="middle aligned column">
-                    <div class="ui big button">
-                        <i class="signup icon"></i>
-                        Sign Up
+                        <div class="field">
+                        <label>Ciudad</label>
+                        <div class="ui left icon input">
+                            <input type="text" onChange={this.handleChange} id="ciudad"/>
+                        </div>
+                        </div>
+                        <div class="ui orange submit button" onClick={this.loginWithEmail}>Registrate!</div>
+                        <br/>
+                        <div class="ui orange submit button"><Link to="/">Si estas registrado</Link></div>
                     </div>
                     </div>
                 </div>
-                <div class="ui vertical divider">
-                    Or
-                </div>
+            </div>
+            <img src={Veggie} alt=""/>
             </div>
             </div>
+            
         )
     }
 }
 
-export default RegisterWithEmail;
+export default Register;
 
 
