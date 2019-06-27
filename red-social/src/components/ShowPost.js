@@ -4,61 +4,82 @@ import firebase from "../config/config";
 	
 
 export class ShowPost extends Component{
-	    constructor(){
-	        super();
-	
+	constructor(){
+        super();
 
-	        this.state={
-	            posts: []
-	        }
-	    }
-	
 
-	    componentWillMount(){
-	        function timeLinePosts(snapshot){
-	            let posts = []
-	
+        this.state={
+            posts: []
+        }
+    }
 
-	            snapshot.forEach(post => {
-	                const items = post.val();
-	                posts.unshift(items)
-	            });
-	            return posts
-	        }
-	        const dbPostsRef = firebase.database().ref();
-	        const postsRef = dbPostsRef.child("posts/");
-	        postsRef.on("value", s=>{
-	            const postForArray = timeLinePosts(s);
-	            this.setState({
-	                posts: postForArray
-	            })
-	        })
-	    }
-	
 
-	    render(){
-	        return(
-	            <div className="col-md-11 align-content-center mx-auto">
-	                {this.state.posts.map((post, i) =>
-	                    <div className="card border-dark mb-3 align-content-center">
-	                        <div className="card-header header-color ">
-	                            <img className="photoPost col-md-1" src={post.foto}/>
-	                            <span className="col-md-10 letter-color">{post.autor}</span>
-	                            <button className="button-align">icon</button>
-	                        </div>
-	                        <div className="card-body text-dark content-color">
-	                            <h5 className="card-title">{post.fecha}</h5>
-	                            <p className="card-text">{post.contenido}</p>
-	                        </div>
-	                    </div>
-	                )}
-	            </div>
-	        )
-	    }
-	
+    componentWillMount(){
+        function FeedPosts(snapshot){
+            let posts = []
 
-	    
-	}
-	
 
-	export default ShowPost;
+            snapshot.forEach(post => {
+                const items = post.val();
+                posts.unshift(items)
+            });
+            return posts
+        }
+        const dbPostsRef = firebase.database().ref();
+        const postsRef = dbPostsRef.child("posts/");
+        postsRef.on("value", snapshot=>{
+            const postForArray = FeedPosts(snapshot);
+            this.setState({
+                posts: postForArray
+            })
+        })
+    }
+
+
+    render(){
+        return(
+				
+			<div class="column">
+                <div class="ui segment">
+                <div class="ui comments">
+                <h3 class="ui dividing header">Publicaciones</h3>
+				
+			<div class="ui feed">
+			{this.state.posts.map((post, i) =>
+			<div class="event">
+			
+			  <div class="label"><img src={post.foto}/></div>
+			  <div class="content">
+				<div class="summary">
+				  <a class="user">{post.autor}</a>
+				  <p>{post.contenido}</p>
+				</div>
+				<div class="meta">
+				<div class="ui labeled button" tabindex="0">
+  					<div class="ui button">
+    				<i class="heart icon"></i> Like
+  					</div>
+  					<a class="ui basic label">
+    				37
+  					</a>
+				</div>
+				</div>
+			  </div>
+			 
+			</div>
+			 )}
+			 <br/>
+			</div>
+			</div>
+			</div>
+			</div>		
+                
+        )
+    }
+
+
+    
+}
+
+
+export default ShowPost;
