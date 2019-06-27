@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import '../App.css';
 import firebase from "../config/config";
-import Veggie from '../veggie.jpg';
+import VeggieNav from '../veggieNav.jpg';
 import {Link} from "react-router-dom";
 
 export class Register extends Component{
@@ -84,7 +84,7 @@ loginWithEmail(e){
                     </div>
                 </div>
             </div>
-            <img src={Veggie} alt=""/>
+            <img src={VeggieNav} alt=""/>
             </div>
             </div>
             

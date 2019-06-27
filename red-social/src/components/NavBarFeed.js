@@ -23,16 +23,13 @@ logOut(e){
 	    render(){
 	        return(
             
-                
-                <div class="ui stackable menu">
-                    
+                <div class="ui stackable menu"> 
                     <div class="item"><Link to="/"><img alt="" src={VeggieNav} /></Link></div>
                         <a class="item"><Link to="/Profile">Perfil <span className="sr-only">(current)</span></Link></a>
                         <a class="item"><Link to="/Feed">Muro<span className="sr-only">(current)</span></Link></a>
                         <a class="item" onClick={this.logOut}><Link to="/">Cerrar sesion<span className="sr-only">(current)</span></Link></a>
                 </div>
-               
-             
+                
 	        )
 	    }
 	}

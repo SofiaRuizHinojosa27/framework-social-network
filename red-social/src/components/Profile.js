@@ -7,7 +7,7 @@ import Veggie from '../veggie.jpg';
 export class Profile extends Component{
 	    
 render(){
-console.log(this.props.user)
+
 	return(
 	    <div>
 	        <NavBarFeed/>

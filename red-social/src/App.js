@@ -30,7 +30,8 @@ class App extends Component {
             userDB: {
               email: user.email,
               photo: user.photoURL,
-              name: user.displayName
+              name: user.displayName,
+              ciudad: user.ciudad
             }
           })
         }else{
@@ -38,7 +39,8 @@ class App extends Component {
             userDB: {
               email: user.email,
               photo: user.photoURL,
-              name: user.displayName
+              name: user.displayName,
+              ciudad : user.ciudad
             }
           })
         }
@@ -57,8 +59,8 @@ class App extends Component {
       <Route exact path="/" render={() => this.state.user ? (<Feed user={this.state.user}/>) : (<SignIn userDB={this.state.userDB}/>)}/>
       <Route path="/SignIn" render={ () => this.state.user ? (<Feed  user={this.state.user}/>) : (<Register userBD={this.state.userDB}/>)} />
       <Route path="/Profile" render={() => <Profile user = {this.state.userDB}/>}/>
-      <Route path="/Feed" render={() => <Feed/>}/>
-      <Route path="/Register" render={() => <Register/>}/>
+      <Route path="/Feed" render={() => <Feed  user={this.state.user}/>}/>
+      <Route path="/Register" render={() => <Register userBD={this.state.userDB}/>}/>
 
       </div>
 
