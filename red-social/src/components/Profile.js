@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import NavBarFeed from "./NavBarFeed";
 import './Profile.css';
 import Veggie from '../veggie.jpg';
+
 	
 
 export class Profile extends Component{
@@ -83,6 +84,7 @@ render(){
             </div>
             </div>
             </div>
+            
             </div>
 	        )
 	    }
